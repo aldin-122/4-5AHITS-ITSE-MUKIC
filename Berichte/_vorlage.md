@@ -10,11 +10,11 @@ klasse: 5AHITS
 
 # Arbeitsbericht – Titel vom Bericht
 
-**Name:** Aldin Mukic  
-**Datum:** 19.10.2026  
-**Fach:** ITSE Labor  
-**Klasse:** 5AHITS  
-**Aufgabe:** [Name der Übung](https://www.franzmatejka.at/htl/doc/...)
+* **Name:** Aldin Mukic
+* **Datum:** 19.10.2026
+* **Fach:** ITSE Labor
+* **Klasse:** 5AHITS
+* **Aufgabe:** [Name der Übung](https://www.franzmatejka.at/htl/doc/...)
 
 ---
 
