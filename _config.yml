@@ -1,0 +1,27 @@
+title: "Arbeitsberichte – Aldin Mukic"
+author: "Aldin Mukic"
+description: "ITSE-Laborberichte der HTL Braunau (4AHITS & 5AHITS)"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-redirect-from
+
+# Alle Seiten bekommen automatisch das Bericht-Layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Reihenfolge der Klassen auf der Startseite (neueste zuerst)
+klassen:
+  - 5AHITS
+  - 4AHITS
+
+exclude:
+  - readme.md
+  - .DS_Store
