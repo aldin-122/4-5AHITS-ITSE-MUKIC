@@ -319,10 +319,22 @@
       btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = 'kopieren';
       btn.addEventListener('click', function () {
         var code = pre.querySelector('code');
-        navigator.clipboard.writeText((code || pre).innerText).then(function () {
+        var text = (code || pre).innerText;
+        function done() {
           btn.textContent = 'kopiert'; btn.classList.add('ok');
           setTimeout(function () { btn.textContent = 'kopieren'; btn.classList.remove('ok'); }, 1500);
-        });
+        }
+        function fallback() {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', '');
+          ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+          document.body.appendChild(ta); ta.select();
+          try { if (document.execCommand('copy')) done(); } catch (e) {}
+          ta.remove();
+        }
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(done, fallback);
+        } else { fallback(); }
       });
       pre.appendChild(btn);
     });
